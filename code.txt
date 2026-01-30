@@ -1,0 +1,18 @@
+PS C:\Users\aryan> docker run -it -e COLLEGE=CSE ubuntu bash
+root@33ca15f41a0a:/# echo $COLLEGE
+CSE
+root@33ca15f41a0a:/# exit
+exit
+PS C:\Users\aryan> docker ps -a
+CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS                      PORTS     NAMES
+13c5747c0f1a   nginx             "/docker-entrypoint.…"   24 hours ago     Exited (0) 24 hours ago               admiring_ellis
+7459e0bd099f   ubuntu            "bash"                   24 hours ago     Exited (127) 24 hours ago             quizzical_mclaren
+62a13a855cb1   ubuntu            "env"                    24 hours ago     Exited (0) 24 hours ago               pensive_hertz
+e22c1b78553e   ubuntu            "/bin/bash"              24 hours ago     Exited (127) 24 hours ago             gracious_ganguly
+af908c859a9d   my-image          "echohello"              2 days ago       Created                               mystifying_margulis
+2a642f42a601   my-image:latest   "echo 'Hello from my…"   2 days ago       Exited (0) 2 days ago                 focused_kirch
+ce4634e699ca   my-image:latest   "echo 'Hello from my…"   3 days ago       Exited (0) 3 days ago                 admiring_lamarr
+a452c695fc24   my-image          "echo 'Hello from my…"   7 days ago       Exited (0) 7 days ago                 naughty_williams
+2e9e2f896297   ubuntu            "echo hello"             7 days ago       Exited (0) 7 days ago                 silly_leavitt
+f82d0f988c9c   ubuntu            "/bin/bash"              7 days ago       Exited (0) 7 days ago                 objective_dijkstra
+PS C:\Users\aryan>
