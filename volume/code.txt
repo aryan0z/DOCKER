@@ -1,0 +1,30 @@
+# Create volume
+docker volume create studentdata
+
+# List volumes
+docker volume ls
+
+# Run first container and write data
+docker run -it --name student_container1 -v studentdata:/student ubuntu
+cd /student
+echo "hello from container1" > data.txt
+ls
+cat data.txt
+exit
+
+# Run container c1 and write shared data
+docker run -it --name c1 -v studentdata:/student ubuntu
+echo "written from c1" >> /student/shared.txt
+exit
+
+# Run container c2 and read shared data
+docker run -it --name c2 -v studentdata:/student ubuntu
+cat /student/shared.txt
+exit
+
+# Remove containers
+docker rm c1 c2 student_container2
+
+# Verify volume still exists
+docker volume ls
+docker volume inspect studentdata
